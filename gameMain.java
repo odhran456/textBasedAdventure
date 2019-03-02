@@ -16,9 +16,6 @@ public class gameMain{
     	npc Kino = new npc(hatGoggles,duster,12,"Kino the Traveller","Kino");
     	character me = new character(bronzeMedHelm,bronzePlateBody,10,Holo,inventory);
     	
-    	me.setHitpoints(12);
-    	Kino.setHitpoints(14);
-    	
     	me.setAlly(Kino);
     	
     	
