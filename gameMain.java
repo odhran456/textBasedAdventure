@@ -1,7 +1,7 @@
 public class gameMain{	
 
 	public static void main(String[] args) {
-		
+		/*
 		headSlot bronzeMedHelm = new headSlot("Bronze Open Faced Helmet",1,0,0,3,0,20,"A rather pathetic excuse for a helmet");
     	chestSlot bronzePlateBody = new chestSlot("Bronze Plate Body",3,0,3,0,0,55,"Provides poor protection for the body");
     	headSlot beret = new headSlot("White Beret",0,0,0,8,0,65,"A fashionable plain white beret");
@@ -26,9 +26,10 @@ public class gameMain{
     	System.out.println(inventory.printItems());
     	
     	System.out.println(inventory.printStatsItem());
-		
+		*/
     	
     	
     	new gameGUI();
+    	
 	}
 }
