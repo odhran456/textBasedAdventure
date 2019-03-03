@@ -19,11 +19,10 @@ public class gameGUI{
 	JLabel titleNameLabel,hpLabel,hpLabelNumber,AllyHPLabel,AllyHPNumber;
 	Font titleFont = new Font("Times New Roman",Font.PLAIN,90);
 	Font normalFont = new Font("Times New Roman",Font.PLAIN,30);
-	JButton startButton,choice1,choice2,choice3,choice4;
+	JButton startButton,choice1,choice2,choice3,choice4,fight;
 	JTextArea mainTextArea;
 	
 	titleScreenHandler tsHandler = new titleScreenHandler();
-	
 	
 	public gameGUI() {
 		window = new JFrame();
@@ -51,7 +50,7 @@ public class gameGUI{
 		startButton.setForeground(Color.white);
 		startButton.setFont(normalFont);
 		startButton.addActionListener(tsHandler);
-		
+		startButton.setFocusPainted(false);
 		
 		startButtonPanel.add(startButton);
 		titleNamePanel.add(titleNameLabel);
@@ -68,14 +67,14 @@ public class gameGUI{
 		}
 	}
 	
-	public void createGameScreen() {
+	public void createGameScreen(hpLabelModel health2) {
 		titleNamePanel.setVisible(false);
 		startButtonPanel.setVisible(false);
 		
 		playerPanel = new JPanel();
 		playerPanel.setBounds(100,15,600,50);
 		playerPanel.setBackground(Color.red);
-		playerPanel.setLayout(new GridLayout(1,4));
+		playerPanel.setLayout(new GridLayout(1,5));
 		con.add(playerPanel);
 		
 		mainTextPanel = new JPanel();
@@ -106,24 +105,28 @@ public class gameGUI{
 		choice1.setBackground(Color.black);
 		choice1.setForeground(Color.white);
 		choice1.setFont(normalFont);
+		choice1.setFocusPainted(false);
 		choiceButtonPanel.add(choice1);
 		
 		choice2 = new JButton("Choice 2");
 		choice2.setBackground(Color.black);
 		choice2.setForeground(Color.white);
 		choice2.setFont(normalFont);
+		choice2.setFocusPainted(false);
 		choiceButtonPanel.add(choice2);
 		
 		choice3 = new JButton("Choice 3");
 		choice3.setBackground(Color.black);
 		choice3.setForeground(Color.white);
 		choice3.setFont(normalFont);
+		choice3.setFocusPainted(false);
 		choiceButtonPanel.add(choice3);
 		
 		choice4 = new JButton("Choice 4");
 		choice4.setBackground(Color.black);
 		choice4.setForeground(Color.white);
 		choice4.setFont(normalFont);
+		choice4.setFocusPainted(false);
 		choiceButtonPanel.add(choice4);
 		
 		hpLabel = new JLabel("HP: ");
@@ -132,10 +135,11 @@ public class gameGUI{
 		playerPanel.add(hpLabel);
 		
 		hpLabelNumber = new JLabel();
-		
+		hpLabelNumber.setText("" + health2);
 		hpLabelNumber.setFont(normalFont);
 		hpLabelNumber.setForeground(Color.white);
 		playerPanel.add(hpLabelNumber);
+		
 		
 		AllyHPLabel = new JLabel("Ally's HP: ");
 		AllyHPLabel.setFont(normalFont);
@@ -146,7 +150,17 @@ public class gameGUI{
 		AllyHPNumber.setFont(normalFont);
 		AllyHPNumber.setForeground(Color.white);
 		playerPanel.add(AllyHPNumber);
+		
+		fight = new JButton("-1 hp");
+		fight.setForeground(Color.white);
+		playerPanel.add(fight);
+		
+		
+		
 	}
 	
+	public void addSetListener(ActionListener al) {
+		fight.addActionListener(al);
+	}
 
 }
